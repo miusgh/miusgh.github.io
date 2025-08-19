@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虚拟逗猫棒 - 手部识别互动</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 欢迎界面 -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-content">
+                <h1>🐱 虚拟逗猫棒</h1>
+                <p>通过手部识别，体验丝滑的逗猫棒互动</p>
+                <button id="start-btn" class="start-button">开始体验</button>
+            </div>
+        </div>
+
+        <!-- 摄像头权限提示 -->
+        <div id="permission-screen" class="screen">
+            <div class="permission-content">
+                <h2>📹 需要摄像头权限</h2>
+                <p>为了识别您的手部动作，我们需要访问您的摄像头</p>
+                <p>请点击"允许"以继续体验</p>
+                <div class="permission-buttons">
+                    <button id="retry-permission" class="retry-button">重新授权</button>
+                    <button id="back-to-welcome" class="back-button">返回</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 加载界面 -->
+        <div id="loading-screen" class="screen">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <h2>正在加载手部识别模型...</h2>
+                <p>请稍候，这可能需要几秒钟</p>
+            </div>
+        </div>
+
+        <!-- 主游戏界面 -->
+        <div id="game-screen" class="screen">
+            <video id="video" autoplay muted playsinline></video>
+            <canvas id="canvas"></canvas>
+            <div id="style-change-effect" class="style-change-effect"></div>
+            
+            <!-- 控制按钮 -->
+            <div class="game-controls">
+                <button id="restart-btn" class="control-button">重新开始</button>
+                <button id="fullscreen-btn" class="control-button">全屏</button>
+            </div>
+
+            <!-- 样式切换控制 -->
+            <div class="style-controls">
+                <button id="prev-style-btn" class="style-button">◀</button>
+                <div class="style-display">
+                    <span id="style-name">经典逗猫棒</span>
+                </div>
+                <button id="next-style-btn" class="style-button">▶</button>
+            </div>
+
+            <!-- 样式指示器 -->
+            <div id="style-indicator" class="style-indicator">
+                <span id="style-number">1 / 15</span>
+            </div>
+
+            <!-- 快捷键提示 -->
+            <div class="shortcut-hint">
+                💡 使用 ← → 键切换样式，空格键或双击屏幕随机切换
+            </div>
+
+            <!-- 样式切换动画 -->
+            <div id="style-transition" class="style-transition">
+                <span id="transition-text"></span>
+            </div>
+
+            <!-- 状态指示器 -->
+            <div class="status-indicator">
+                <div id="hand-status" class="status-item">
+                    <span class="status-icon">✋</span>
+                    <span class="status-text">等待手部...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 错误提示界面 -->
+        <div id="error-screen" class="screen">
+            <div class="error-content">
+                <h2>❌ 出现错误</h2>
+                <p id="error-message">未知错误</p>
+                <button id="error-back-btn" class="back-button">返回首页</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入TensorFlow.js和MediaPipe -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.15.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1646424915/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3.1640029074/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3.1620248252/drawing_utils.js"></script>
+    
+    <!-- 引入物理引擎 -->
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+    
+    <!-- 应用脚本 -->
+    <script src="app.js"></script>
+</body>
+</html>

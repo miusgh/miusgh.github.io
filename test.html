@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逗猫棒样式测试</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+        
+        .style-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .style-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .style-item:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .style-name {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .style-pattern {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .controls {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .control-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .control-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+        }
+        
+        .info {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .info h3 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        
+        .info ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .info li {
+            margin: 0.3rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🐱 逗猫棒样式预览</h1>
+        
+        <div class="controls">
+            <button class="control-button" onclick="window.open('index.html', '_blank')">🚀 启动完整应用</button>
+            <button class="control-button" onclick="window.open('debug.html', '_blank')">🔧 调试模式</button>
+        </div>
+        
+        <div class="info">
+            <h3>✨ 新增功能特性</h3>
+            <ul>
+                <li><strong>15种逗猫棒样式</strong>：从经典到魔法，从蝴蝶到极光</li>
+                <li><strong>多种切换方式</strong>：按钮、键盘、双击屏幕</li>
+                <li><strong>流畅动画效果</strong>：样式切换时的视觉反馈</li>
+                <li><strong>随机切换功能</strong>：空格键或双击屏幕随机体验</li>
+                <li><strong>实时状态显示</strong>：当前样式编号和名称</li>
+            </ul>
+        </div>
+        
+        <div class="style-list">
+            <div class="style-item">
+                <div class="style-name">经典逗猫棒</div>
+                <div class="style-pattern">基础红色线条</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">彩虹逗猫棒</div>
+                <div class="style-pattern">七彩渐变效果</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">激光逗猫棒</div>
+                <div class="style-pattern">蓝色激光脉冲</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">火焰逗猫棒</div>
+                <div class="style-pattern">橙色火焰效果</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">星光逗猫棒</div>
+                <div class="style-pattern">紫色星光闪烁</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">闪电逗猫棒</div>
+                <div class="style-pattern">黄色闪电锯齿</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">魔法棒</div>
+                <div class="style-pattern">粉色魔法星星</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">蝴蝶逗猫棒</div>
+                <div class="style-pattern">粉色蝴蝶翅膀</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">泡泡逗猫棒</div>
+                <div class="style-pattern">蓝色透明泡泡</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">音符逗猫棒</div>
+                <div class="style-pattern">绿色音符串</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">雪花逗猫棒</div>
+                <div class="style-pattern">浅蓝色雪花</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">烟花逗猫棒</div>
+                <div class="style-pattern">多彩烟花爆炸</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">彩虹独角兽</div>
+                <div class="style-pattern">彩虹鬃毛效果</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">极光逗猫棒</div>
+                <div class="style-pattern">绿色极光波纹</div>
+            </div>
+            <div class="style-item">
+                <div class="style-name">水晶逗猫棒</div>
+                <div class="style-pattern">透明水晶折射</div>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>🎮 操作说明</h3>
+            <ul>
+                <li><strong>左右箭头键</strong>：切换逗猫棒样式</li>
+                <li><strong>空格键</strong>：随机切换样式</li>
+                <li><strong>双击屏幕</strong>：随机切换样式</li>
+                <li><strong>R键</strong>：随机切换样式</li>
+                <li><strong>全屏按钮</strong>：进入全屏模式</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
